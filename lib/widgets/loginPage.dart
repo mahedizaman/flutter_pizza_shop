@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pizza_shop/widgets/signupPage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -96,19 +98,174 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       'Email',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 4),
                     TextField(
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.grey.shade200,
                         hintText: "Enter Your Email",
                         border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Color(0xffFF6B57),
+                            width: 1.5,
+                          ),
                         ),
                       ),
                       keyboardType: TextInputType.emailAddress,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Password',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.grey.shade200,
+                        hintText: "* * * * * * * * * *",
+                        hintStyle: TextStyle(fontWeight: FontWeight(700)),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                            color: Color(0xffFF6B57),
+                            width: 1.5,
+                          ),
+                        ),
+                      ),
+                      keyboardType: TextInputType.visiblePassword,
+                    ),
+                    const SizedBox(height: 18),
+                    Center(
+                      child: Text(
+                        'Forgot Password',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.redAccent,
+                          fontWeight: FontWeight(600),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    Center(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFFF6B57),
+                          minimumSize: Size(200, 50),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontWeight: FontWeight(600),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    Center(
+                      child: Text(
+                        'Or login with',
+                        style: TextStyle(
+                          color: const Color.fromARGB(135, 158, 158, 158),
+                          fontWeight: FontWeight(600),
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    Center(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              shadowColor: Colors.black87,
+                              backgroundColor: Colors.white,
+                              minimumSize: Size(150, 60),
+                            ),
+                            icon: Icon(
+                              Icons.facebook,
+                              color: Colors.blue,
+                              size: 50,
+                            ),
+                            onPressed: () {},
+                            label: Text(
+                              "FACEBOOK",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              minimumSize: Size(150, 60),
+                            ),
+                            onPressed: () {},
+                            icon: Image.asset(
+                              'assets/images/google.png',
+                              width: 50,
+                              height: 50,
+                            ),
+                            label: Text(
+                              "GOOGLE",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 80),
+                    Center(
+                      child: Text.rich(
+                        TextSpan(
+                          text: "Don't have an account? ",
+                          style: TextStyle(color: Colors.black, fontSize: 12),
+                          children: [
+                            TextSpan(
+                              text: "Sign Up",
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SignupPage(),
+                                    ),
+                                  );
+                                },
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
