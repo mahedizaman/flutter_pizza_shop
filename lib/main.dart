@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Pizza Shop',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
-      home: const SplashPage(),
+      home: SafeArea(child: const SplashPage()),
     );
   }
 }
