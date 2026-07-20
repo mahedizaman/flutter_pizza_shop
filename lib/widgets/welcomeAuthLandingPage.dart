@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pizza_shop/widgets/loginPage.dart';
+import 'package:flutter_pizza_shop/widgets/signupPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeAuthLandingPage extends StatefulWidget {
@@ -62,37 +64,51 @@ class _WelcomeAuthLandingPageState extends State<WelcomeAuthLandingPage> {
           ),
           Positioned(
             bottom: 50,
-            left: 80,
+            left: 40,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignupPage()),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.transparent,
                 shadowColor: const Color.fromARGB(100, 255, 255, 255),
                 foregroundColor: Colors.white,
                 side: BorderSide(color: Colors.white, width: 1),
+                minimumSize: Size(150, 60),
               ),
               child: Text(
                 'Sign Up',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
               ),
             ),
           ),
           Positioned(
             bottom: 50,
-            right: 80,
+            right: 40,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF242731),
+                minimumSize: Size(150, 60),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
               child: Text(
                 'Log In',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                  fontSize: 18,
                 ),
               ),
             ),
