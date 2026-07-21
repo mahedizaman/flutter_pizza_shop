@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pizza_shop/widgets/forgotPasswordPage.dart';
 import 'package:flutter_pizza_shop/widgets/signupPage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -155,12 +156,22 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 18),
                       Center(
-                        child: Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.redAccent,
-                            fontWeight: FontWeight(600),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgotPasswordPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Forgot Password',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.redAccent,
+                              fontWeight: FontWeight(600),
+                            ),
                           ),
                         ),
                       ),

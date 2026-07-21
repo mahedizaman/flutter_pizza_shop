@@ -180,17 +180,7 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                         keyboardType: TextInputType.visiblePassword,
                       ),
-                      const SizedBox(height: 18),
-                      Center(
-                        child: Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.redAccent,
-                            fontWeight: FontWeight(600),
-                          ),
-                        ),
-                      ),
+
                       const SizedBox(height: 18),
                       Center(
                         child: ElevatedButton(
@@ -200,7 +190,7 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                           onPressed: () {},
                           child: Text(
-                            'Login',
+                            'Signup',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.white,

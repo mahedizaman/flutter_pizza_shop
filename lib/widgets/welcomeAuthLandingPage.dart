@@ -36,9 +36,7 @@ class _WelcomeAuthLandingPageState extends State<WelcomeAuthLandingPage> {
               right: 0,
               child: Opacity(
                 opacity: 0.7,
-                child: Image.asset(
-                  'assets/images/wepik-export-20231123125826rxSl 1.png',
-                ),
+                child: Image.asset('assets/images/forgot_bg.png'),
               ),
             ),
             Positioned(
