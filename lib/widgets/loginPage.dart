@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pizza_shop/widgets/forgotPasswordPage.dart';
+import 'package:flutter_pizza_shop/widgets/homePage.dart';
 import 'package:flutter_pizza_shop/widgets/signupPage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -182,7 +183,14 @@ class _LoginPageState extends State<LoginPage> {
                             backgroundColor: Color(0xFFFF6B57),
                             minimumSize: Size(200, 50),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePage(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'Login',
                             style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pizza_shop/widgets/homePage.dart';
 import 'package:flutter_pizza_shop/widgets/loginPage.dart';
 
 class SignupPage extends StatefulWidget {
@@ -188,7 +189,14 @@ class _SignupPageState extends State<SignupPage> {
                             backgroundColor: Color(0xFFFF6B57),
                             minimumSize: Size(200, 50),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePage(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'Signup',
                             style: TextStyle(
